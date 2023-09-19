@@ -7,7 +7,7 @@
 }
 
 .ui-menu-color-home {
-    background-color: #ffc004;
+    background-color: #f3b600;
 }
 
 .ui-menu-color-resume {
@@ -15,7 +15,7 @@
 }
 
 .ui-menu-color-contact {
-    background-color: #aedfff;
+    background-color: #499ad0;
 }
 
 .ui-menu-color-download {
@@ -59,11 +59,42 @@ header {
     margin: 0;
 }
 
-.menu-container {
+.menucontainer {
     font-size: 0;
 }
 
 #nav li {
     font-size: 14px;
     padding: 0;
+}
+
+.menuitem {
+    height: 120px;
+    text-align: center;
+    padding: 0;
+}
+
+.menuitem a {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    height: 120px;
+}
+
+.menuitem a i {
+    padding-top: 29px;
+    display: block;
+    color: #fafafa;
+    font-size: 26px;
+}
+
+.menuitem span {
+    display: block;
+    width: 100%;
+    padding-top: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
