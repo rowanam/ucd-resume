@@ -26,6 +26,10 @@
     background-color: #fff;
 }
 
+.three-reasons-icon {
+    color: #f3b600;
+}
+
 /* --------------------------- Special paddings/margins/text --------------------------- */
 
 h1,
@@ -202,4 +206,14 @@ footer {
 
 footer p {
     font-weight: 100;
+}
+
+/* --------------------------- Three Reasons --------------------------- */
+
+.three-reasons-icon {
+    font-size: 26px;
+}
+
+.three-reasons-heading {
+    margin-bottom: 15px;
 }
