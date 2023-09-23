@@ -26,16 +26,24 @@
     background-color: #e0e0e0;
 }
 
+.bg-color-three-reasons {
+    background-color: #fff;
+}
+
 .bg-color-work-history {
     background-color: #ff6f6f;
 }
 
-.bg-color-three-reasons {
+.bg-color-contact {
     background-color: #fff;
 }
 
 .three-reasons-icon {
     color: #f3b600;
+}
+
+.contact-form {
+    background-color: #e7f2fd;
 }
 
 footer {
@@ -185,7 +193,7 @@ header {
 /* --------------------------- Hover.css --------------------------- */
 
 .hvr-sweep-to-right:before {
-    background: rgba(0,0,0,.2);
+    background: rgba(0, 0, 0, .2);
     height: 120px;
 }
 
@@ -338,4 +346,46 @@ footer p {
 
 .history-items {
     margin-bottom: 30px;
+}
+
+/* --------------------------- Contact Form --------------------------- */
+
+.contact-heading {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.center-form {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+.contact-form {
+    padding: 10px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #fafafa;
+    background-color: #e84610;
+    border-color: #e84610;
+}
+
+/* --------------------------- Media Queries --------------------------- */
+
+@media (min-width: 992px) {
+    .center-form {
+        min-height: 240px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
 }
