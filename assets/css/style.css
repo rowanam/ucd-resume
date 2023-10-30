@@ -46,6 +46,10 @@
     background-color: #fff;
 }
 
+.bg-color-conferences {
+    background-color: #f4f4f4;
+}
+
 .three-reasons-icon {
     color: #f3b600;
 }
@@ -386,6 +390,12 @@ button[type="submit"] {
     color: #fafafa;
     background-color: #e84610;
     border-color: #e84610;
+}
+
+/* --------------------------- Map --------------------------- */
+
+#map {
+    min-height: 360px;
 }
 
 /* --------------------------- Media Queries --------------------------- */
