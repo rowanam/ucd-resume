@@ -1,16 +1,3 @@
-// Get the username input field
-const usernameInput = document.getElementById("gh-username");
-
-// Get GitHub user information from API when site user presses enter
-usernameInput.addEventListener("keypress", function (event) {
-    // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-        // Cancel the default action, if needed
-        event.preventDefault();
-        fetchGitHubInformation(event);
-    }
-});
-
 /**
  * Create an html string with GitHub user information
  * @param {*} user - JSON user object fetched from GitHub
@@ -70,10 +57,14 @@ function repoInformationHTML(repos) {
 }
 
 /**
- * Get user information from GitHub
+ * Get user and repo information from GitHub
  * @param {*} event 
  */
 function fetchGitHubInformation(event) {
+    // Clear display divs
+    $("#gh-user-data").html("");
+    $("#gh-repo-data").html("");
+
     let username = $("#gh-username").val();
 
     if (!username) {
@@ -114,3 +105,21 @@ function fetchGitHubInformation(event) {
         }
     );
 }
+
+$(document).ready(function () {
+    // Display default user github info
+    fetchGitHubInformation();
+
+    // Get the username input field
+    const usernameInput = document.getElementById("gh-username");
+
+    // Get and display GitHub info from API when site user presses enter
+    usernameInput.addEventListener("keypress", function (event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            fetchGitHubInformation(event);
+        }
+    });
+});
