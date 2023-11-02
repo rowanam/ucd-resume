@@ -37,6 +37,39 @@ function userInformationHTML(user) {
 }
 
 /**
+ * Create an html string with GitHub user repos
+ * @param {*} repos - repos array fetched from GitHub
+ * @returns html string
+ */
+function repoInformationHTML(repos) {
+    // If no repos present, display this to user
+    if (repos.length === 0) {
+        return `<div class="clearfix repo-list">No repos!</div>`;
+    }
+
+    // Create an array of the HTML strings for each repo
+    let listItemsHTML = repos.map(function (repo) {
+        return `
+            <li>
+                <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            </li>
+        `;
+    });
+
+    // Create formatted html string
+    let html = `
+        <div class="clearfix repo-list">
+            <p><strong>Repo List:</strong></p>
+            <ul>
+                ${listItemsHTML.join("\n")}
+            </ul>
+        </div>
+    `;
+
+    return html;
+}
+
+/**
  * Get user information from GitHub
  * @param {*} event 
  */
@@ -54,13 +87,17 @@ function fetchGitHubInformation(event) {
         </div>`);
 
     $.when(
-        // Retrieve user information from GitHub API
-        $.getJSON(`https://api.github.com/users/${username}`)
+        // Retrieve user information and repos from GitHub API
+        $.getJSON(`https://api.github.com/users/${username}`),
+        $.getJSON(`https://api.github.com/users/${username}/repos`)
     ).then(
         // If fetch successful, display formatted user info on page
-        function (response) {
-            let userData = response;
+        function (firstResponse, secondResponse) {
+            let userData = firstResponse[0];
+            let repoData = secondResponse[0];
+
             $("#gh-user-data").html(userInformationHTML(userData));
+            $("#gh-repo-data").html(repoInformationHTML(repoData));
         },
         // If an error occurs, display error information
         function (errorResponse) {
