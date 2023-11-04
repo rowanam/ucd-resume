@@ -71,7 +71,7 @@
                 <h5 class="uppercase text-center">Let's work together!</h5>
 
                 <div class="center-form">
-                    <form action="" class="contact-form">
+                    <form onsubmit="return sendMail(this);" class="contact-form">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required>
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             required>
@@ -161,6 +161,11 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/06f013de70.js" crossorigin="anonymous"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script type="text/javascript" src="assets/js/send-email.js"></script>
 </body>
 
 </html>
